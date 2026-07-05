@@ -616,7 +616,14 @@ section{
 }
 
 .hero-content span{
-    color:#38bdf8;
+
+    background:linear-gradient(90deg,#38bdf8,#60a5fa);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
 }
 
 .hero-content h2{
@@ -633,13 +640,25 @@ section{
 
 .hero-tagline{
 
-    font-size:24px;
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:8px 18px;
+
+    background:rgba(56,189,248,.15);
 
     color:#38bdf8;
 
-    margin-top:12px;
+    border:1px solid rgba(56,189,248,.35);
+
+    border-radius:50px;
+
+    font-size:17px;
 
     font-weight:600;
+
+}
 
 }
 
@@ -659,15 +678,17 @@ section{
 
 .hero-content p{
 
-    max-width:650px;
+    max-width:640px;
 
-    font-size:19px;
-
-    line-height:1.9;
+    margin-top:28px;
 
     color:#cbd5e1;
 
-    margin-top:20px;
+    font-size:18px;
+
+    line-height:1.9;
+
+}
 
 }
 }
@@ -826,10 +847,21 @@ section{
 
 }
 
-@keyframes float{ /* =====================================================
-                RESPONSIVE DESIGN
-===================================================== */
+@keyframes float{
 
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
 @media (max-width:1024px){
 
     .navbar{
@@ -902,12 +934,42 @@ section{
     }
 
     .hero{
-        padding-top:170px;
-    }
+    min-height:100vh;
 
-    .hero-content h1{
-        font-size:52px;
-    }
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 10%;
+
+    background:
+        radial-gradient(circle at top right,
+        rgba(56,189,248,.12),
+        transparent 35%),
+
+        radial-gradient(circle at bottom left,
+        rgba(56,189,248,.08),
+        transparent 35%),
+
+        #0f172a;
+
+}
+
+      .hero-content h1{
+
+    font-size:78px;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    margin:15px 0;
+
+    letter-spacing:-2px;
+
+    color:white;
+
+}
 
     .hero-content h2{
         font-size:28px;
