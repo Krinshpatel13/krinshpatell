@@ -623,30 +623,43 @@ section{
     color:#38bdf8;
 }
 
-.hero-content h1{
+.hero-name{
 
-    font-size:72px;
+    font-size:84px;
 
-    font-weight:700;
+    font-weight:800;
 
-    line-height:1.1;
+    line-height:0.95;
 
-    margin:15px 0;
+    letter-spacing:-3px;
+
+    margin:12px 0 20px;
 
     color:#ffffff;
 
+    text-shadow:0 5px 20px rgba(255,255,255,.08);
+
 }
 }
 
-.hero-content span{
+.hero-name span{
 
-    background:linear-gradient(90deg,#38bdf8,#60a5fa);
+    background:linear-gradient(
+        135deg,
+        #38bdf8,
+        #60a5fa,
+        #0ea5e9
+    );
 
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
 
 }
+.hero-name{
+
+    animation:fadeInUp 1s ease;
+
 }
 
 .hero-content h2{
@@ -1035,7 +1048,16 @@ section{
     }
 
     .hero-content h4{
-        font-size:18px;
+
+    color:#38bdf8;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
     }
 
     .hero-content p{
@@ -1111,6 +1133,25 @@ section{
     .education-container,
     .contact-container{
         grid-template-columns:1fr;
+    }
+
+}
+@keyframes fadeInUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
     }
 
 }
