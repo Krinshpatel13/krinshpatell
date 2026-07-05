@@ -586,7 +586,7 @@ section{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:80px;
+    gap:100px;
     flex-wrap:wrap;
 }
 
@@ -640,8 +640,8 @@ section{
 .hero-image img{
    animation:float 4s ease-in-out infinite;
     transition:0.4s ease;
-    width:420px;
-    height:420px;
+    width:390px;
+    height:390px;
     object-fit:cover;
     border-radius:50%;
     border:6px solid #38bdf8;
