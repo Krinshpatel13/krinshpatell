@@ -815,3 +815,37 @@ section{
     }
 
 }
+/* =====================================================
+                TABLET RESPONSIVE
+===================================================== */
+
+@media (max-width:1024px){
+
+    .hero-container{
+        flex-direction:column-reverse;
+        text-align:center;
+        gap:60px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image img{
+        width:320px;
+        height:320px;
+    }
+
+    .hero-content p{
+        max-width:100%;
+        margin:auto;
+    }
+
+    .experience-container,
+    .projects-container,
+    .education-container,
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+}
