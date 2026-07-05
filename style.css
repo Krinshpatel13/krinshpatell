@@ -702,6 +702,70 @@ section{
     transform: scale(1.05);
 
 }
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 28px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    font-size:17px;
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
+.btn-primary{
+
+    background:#38bdf8;
+
+    color:#0f172a;
+
+    border:2px solid #38bdf8;
+
+}
+.btn-primary:hover{
+
+    background:#0f172a;
+
+    color:#38bdf8;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(56,189,248,.35);
+
+}
+.btn-outline{
+
+    background:transparent;
+
+    color:#ffffff;
+
+    border:2px solid #38bdf8;
+
+}
+.btn-outline:hover{
+
+    background:#38bdf8;
+
+    color:#0f172a;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(56,189,248,.35);
+
+}
+
 /* ================= HERO INFO ================= */
 
 .hero-info{
@@ -783,8 +847,17 @@ section{
         margin:auto;
     }
 
-    .hero-buttons{
-        justify-content:center;
+    .btn-outline:hover{
+
+    background:#38bdf8;
+
+    color:#0f172a;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(56,189,248,.35);
+
+}
     }
 
     .hero-image img{
