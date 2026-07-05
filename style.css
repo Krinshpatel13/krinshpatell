@@ -601,9 +601,18 @@ section{
 }
 
 .hero-content h1{
+
     font-size:72px;
-   line-height:1.1;
-    margin:20px 0;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    margin:15px 0;
+
+    color:#ffffff;
+
+}
 }
 
 .hero-content span{
@@ -611,17 +620,56 @@ section{
 }
 
 .hero-content h2{
+
     font-size:34px;
-   color:#cbd5e1;
-    font-weight:500;
-    margin-bottom:30px;
+
+    color:#e2e8f0;
+
+    margin-top:15px;
+
+    font-weight:600;
+
+}
+
+.hero-tagline{
+
+    font-size:24px;
+
+    color:#38bdf8;
+
+    margin-top:12px;
+
+    font-weight:600;
+
+}
+
+.hero-specialization{
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+    margin-top:10px;
+
+    margin-bottom:25px;
+
 }
 
 .hero-content p{
+
     max-width:650px;
+
+    font-size:19px;
+
+    line-height:1.9;
+
     color:#cbd5e1;
-    font-size:18px;
-    line-height:1.8;
+
+    margin-top:20px;
+
+}
 }
 
 .hero-buttons{
