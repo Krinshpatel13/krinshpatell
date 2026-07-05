@@ -46,35 +46,6 @@ body{
     color:#38bdf8;
 }
 
-.hero{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 10%;
-}
-
-.hero h1{
-    font-size:60px;
-}
-
-.hero span{
-    color:#38bdf8;
-}
-
-.hero h2{
-    margin-top:15px;
-    font-weight:400;
-}
-
-.hero p{
-    margin-top:25px;
-    line-height:30px;
-    font-size:18px;
-    color:#cbd5e1;
-}
-
 .btn{
     display:inline-block;
     margin-top:35px;
@@ -98,13 +69,44 @@ body{
     flex-wrap: wrap;
 }
 
-.hero-buttons .btn {
-    padding: 14px 28px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    transition: 0.3s ease;
+.hero-buttons .hero-content{
+    text-align:left;
+}
+
+.hero-content h4{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.hero-content h1{
+    font-size:70px;
+    line-height:1.1;
+}
+
+.hero-content h2{
+    font-size:42px;
+    font-weight:500;
+    color:#e2e8f0;
+}
+
+.hero-content p{
+    font-size:20px;
+    color:#cbd5e1;
+}
+
+.hero-buttons .btn{
+    background:#38bdf8;
+    color:white;
+    padding:16px 34px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.hero-buttons .btn:hover{
+    transform:translateY(-5px);
+    background:#0ea5e9;
 }
 
 .hero-buttons .btn {
