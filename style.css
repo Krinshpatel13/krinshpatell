@@ -635,3 +635,52 @@ section{
     color:#38bdf8;
 
 }
+/* ================= EDUCATION ================= */
+
+.education{
+    padding:100px 10%;
+    background:#0f172a;
+}
+
+.education-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.education-card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #38bdf8;
+    transition:.3s;
+}
+
+.education-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 30px rgba(56,189,248,.3);
+}
+
+.education-card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.education-card h4{
+    color:#ffffff;
+    margin-bottom:10px;
+}
+
+.education-card span{
+    display:block;
+    color:#94a3b8;
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+.education-card p{
+    color:#e2e8f0;
+    line-height:1.7;
+}
