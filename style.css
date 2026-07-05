@@ -601,7 +601,8 @@ section{
 }
 
 .hero-content h1{
-    font-size:70px;
+    font-size:72px;
+   line-height:1.1;
     margin:20px 0;
 }
 
@@ -610,7 +611,8 @@ section{
 }
 
 .hero-content h2{
-    font-size:36px;
+    font-size:34px;
+   color:#cbd5e1;
     font-weight:500;
     margin-bottom:30px;
 }
@@ -647,23 +649,24 @@ section{
 
 }
 
-.hero-image img:hover{
+    .hero-image img:hover{
 
-    transform:scale(1.05);
-   @keyframes float{
+    transform: scale(1.05);
+
+}
+
+@keyframes float{
 
     0%{
-        transform:translateY(0px);
+        transform: translateY(0px);
     }
 
     50%{
-        transform:translateY(-10px);
+        transform: translateY(-10px);
     }
 
     100%{
-        transform:translateY(0px);
+        transform: translateY(0px);
     }
-
-}
 
 }
