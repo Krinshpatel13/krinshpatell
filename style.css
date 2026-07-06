@@ -575,13 +575,74 @@ section{
 /* ========= NEW HERO LAYOUT ========= */
 
 .hero{
+
+    position:relative;
+
+    overflow:hidden;
+
     min-height:100vh;
+
     display:flex;
+
     align-items:center;
+
     padding:120px 10%;
+
+    background:#0f172a;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:radial-gradient(circle,
+        rgba(56,189,248,.20),
+        transparent 70%);
+
+    top:-150px;
+
+    right:-120px;
+
+    animation:floatGlow1 8s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:radial-gradient(circle,
+        rgba(59,130,246,.12),
+        transparent 70%);
+
+    bottom:-120px;
+
+    left:-80px;
+
+    animation:floatGlow2 10s ease-in-out infinite;
+
+    pointer-events:none;
+
 }
 
 .hero-container{
+   position:relative;
+   z-index:2;
     width:100%;
     display:flex;
     justify-content:space-between;
@@ -1172,6 +1233,49 @@ section{
         opacity:1;
 
         transform:translateY(0);
+
+    }
+
+}
+@keyframes floatGlow1{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(25px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@keyframes floatGlow2{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
 
     }
 
