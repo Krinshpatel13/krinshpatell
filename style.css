@@ -798,16 +798,24 @@ section{
 }
 
 .hero-image{
+
     flex:1;
+
     display:flex;
+
     justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:40px;
+
 }
 
 .hero-image img{
-   animation:float 4s ease-in-out infinite;
+   animation: floatImage 5s ease-in-out infinite;
     transition:0.4s ease;
-    width:390px;
-    height:390px;
+    width:480px;
+    height:480px;
     object-fit:cover;
     border-radius:50%;
     border:6px solid #38bdf8;
@@ -1550,5 +1558,21 @@ section{
     transform:translateY(-6px);
 
     box-shadow:0 15px 35px rgba(56,189,248,.25);
+
+}
+
+@keyframes floatImage{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
 
 }
