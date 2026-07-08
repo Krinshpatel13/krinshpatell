@@ -786,15 +786,15 @@ gap:80px;
 
 .hero-image{
 
-    flex:0 0 480px;
-
     display:flex;
 
     justify-content:center;
 
     align-items:flex-start;
 
-    margin-top:120px;
+    position:relative;
+
+    margin-top:0;
 
 }
 
