@@ -909,9 +909,14 @@ section{
 
     .hero-image img:hover{
 
-    transform: scale(1.05);
+    transform:
+
+        scale(1.04)
+
+        rotate(-2deg);
 
 }
+
 .btn{
 
     display:inline-flex;
