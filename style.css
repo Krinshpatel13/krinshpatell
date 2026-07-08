@@ -1498,7 +1498,7 @@ gap:80px;
 
     color:#fff;
 
-    box-shadow:0 12px 30px rgba(56,189,248,.35);
+    box-shadow:none;
 
 }
 
@@ -1506,7 +1506,7 @@ gap:80px;
 
     transform:translateY(-6px);
 
-    box-shadow:0 20px 40px rgba(56,189,248,.45);
+    box-shadow:0 12px 24px rgba(56,189,248,.18);
 
 }
 
