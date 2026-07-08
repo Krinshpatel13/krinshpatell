@@ -645,9 +645,9 @@ section{
    z-index:2;
     width:100%;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:100px;
+   justify-content:space-between;
+    align-items:flex-start;
+    gap:80px;
     flex-wrap:wrap;
 }
 
@@ -799,15 +799,15 @@ section{
 
 .hero-image{
 
-    flex:1;
+    flex:0 0 480px;
 
     display:flex;
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-start;
 
-    position:relative;
+    margin-top:120px;
 
 }
 
