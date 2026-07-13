@@ -1591,3 +1591,109 @@ gap:80px;
     }
 
 }
+
+/* ===========================================
+        FINAL RESPONSIVE CSS
+=========================================== */
+
+@media (max-width:768px){
+
+/* Navbar */
+
+.navbar{
+    flex-direction:column;
+    padding:15px 0;
+    gap:15px;
+}
+
+.logo{
+    font-size:30px;
+    text-align:center;
+}
+
+.navbar ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+/* Hero */
+
+.hero{
+    padding:140px 8% 80px;
+}
+
+.hero-container{
+    display:flex;
+    flex-direction:column-reverse;
+    align-items:center;
+    text-align:center;
+    gap:50px;
+}
+
+/* Image */
+
+.hero-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:260px;
+    height:260px;
+}
+
+.hero-image::after{
+    width:290px;
+    height:290px;
+}
+
+.hero-image::before{
+    width:330px;
+    height:330px;
+}
+
+/* Name */
+
+.hero-name{
+    font-size:58px;
+    line-height:1;
+}
+
+.hero-content h2{
+    font-size:30px;
+}
+
+.hero-content h3{
+    font-size:18px;
+}
+
+.hero-content p{
+    font-size:16px;
+}
+
+/* Cards */
+
+.hero-info{
+    grid-template-columns:1fr;
+}
+
+/* Buttons */
+
+.hero-buttons{
+    display:flex;
+    flex-direction:column;
+}
+
+.btn{
+    width:100%;
+}
+
+/* Section Titles */
+
+.section-title h2{
+    font-size:34px;
+}
+
+}
