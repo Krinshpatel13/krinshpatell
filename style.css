@@ -110,7 +110,11 @@ header{
 
     display:flex;
 
-    gap:35px;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
 
 }
 
@@ -1103,79 +1107,6 @@ gap:80px;
         grid-template-columns:1fr;
     }
 
-      .hero-content h1{
-
-    font-size:78px;
-
-    font-weight:800;
-
-    line-height:1.05;
-
-    margin:15px 0;
-
-    letter-spacing:-2px;
-
-    color:white;
-
-}
-
-    .hero-content h2{
-        font-size:28px;
-    }
-
-    .hero-content h4{
-        font-size:22px;
-    }
-
-    .hero-content p{
-        font-size:17px;
-    }
-
-    .hero-image img{
-        width:280px;
-        height:280px;
-    }
-
-    .section-title h2{
-        font-size:34px;
-    }
-
-    .about-content h2{
-        font-size:34px;
-    }
-
-    .career-box h3{
-        font-size:26px;
-    }
-
-    }
-
-    .hero-content p{
-        font-size:16px;
-    }
-
-    .hero-image img{
-        width:230px;
-        height:230px;
-    }
-
-    .btn{
-        width:100%;
-        text-align:center;
-    }
-
-    .experience-card,
-    .project-card,
-    .education-card,
-    .contact-card{
-        padding:25px;
-    }
-
-    .footer-links{
-        flex-direction:column;
-        gap:12px;
-    }
-
 /* =====================================================
                 TABLET RESPONSIVE
 ===================================================== */
@@ -1506,19 +1437,25 @@ gap:18px;
 }
 
 .hero-container{
+
     display:flex;
-    flex-direction:column-reverse;
+
+    flex-direction:column;
+
     align-items:center;
+
     text-align:center;
-    gap:50px;
+
 }
 
 /* Image */
 
 .hero-image{
+   
     width:100%;
     display:flex;
     justify-content:center;
+    margin-top:20px;
 }
 
 .hero-image img{
@@ -1558,7 +1495,9 @@ gap:18px;
 /* Cards */
 
 .hero-info{
+    width:100%;
     grid-template-columns:1fr;
+  
 }
 
 /* Buttons */
@@ -1569,7 +1508,13 @@ gap:18px;
 }
 
 .btn{
+
     width:100%;
+
+    max-width:350px;
+
+    margin:auto;
+
 }
 
 /* Section Titles */
