@@ -1294,3 +1294,40 @@ button:focus-visible {
   }
 }
 
+/* Fix Surat Manav Seva Sangh experience entry */
+#experience .experience-item {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#experience .experience-item .experience-content {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#experience .experience-item .experience-content h3,
+#experience .experience-item .experience-content h4,
+#experience .experience-item .experience-content p,
+#experience .experience-item .experience-content .experience-tags {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+#experience .experience-item .experience-date {
+  white-space: normal;
+  min-width: 0;
+}
+
+#experience .experience-item .experience-content h4 {
+  line-height: 1.5;
+}
+
+#experience .experience-item .experience-content p {
+  line-height: 1.7;
+}
+
+
