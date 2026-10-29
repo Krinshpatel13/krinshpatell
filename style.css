@@ -1,4 +1,3 @@
-
 /* =========================================
    KRINSH PATEL — PORTFOLIO DESIGN SYSTEM
    Modern Creative | FMCG Food & Beverage
@@ -62,6 +61,22 @@ section {
 
 .section-padding {
   padding: 100px max(24px, calc((100% - 1160px) / 2));
+}
+
+/* Shared section width: keeps content readable and centered */
+.section {
+  padding: 100px 24px;
+}
+
+.container {
+  width: min(1160px, 100%);
+  margin-inline: auto;
+  min-width: 0;
+}
+
+.section-padding > .container {
+  width: min(1160px, 100%);
+  margin-inline: auto;
 }
 
 /* =========================================
@@ -145,12 +160,14 @@ section {
    COMMON COMPONENTS
 ========================================= */
 
-.eyebrow {
+.eyebrow,
+.section-eyebrow {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.09em;
   color: #77746b;
   line-height: 1.8;
+  text-transform: uppercase;
 }
 
 .section-heading {
@@ -419,6 +436,29 @@ section {
   justify-content: center;
 }
 
+.project-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-visual.has-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.40));
+}
+
+.project-visual.has-image .project-number,
+.project-visual.has-image .visual-caption {
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
 .project-britannia .project-visual {
   background: #dce5d3;
 }
@@ -525,32 +565,40 @@ section {
   border-top: 1px solid var(--line);
 }
 
+/* Experience entries use a date column and a flexible content column.
+   The marker is decorative and does not consume a grid column. */
 .experience-item {
   display: grid;
-  grid-template-columns: 145px 18px minmax(0, 1fr);
-  gap: 22px;
+  grid-template-columns: minmax(125px, 175px) minmax(0, 1fr);
+  gap: 12px 28px;
   position: relative;
+  width: 100%;
+  min-width: 0;
   padding: 30px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .experience-date {
+  grid-column: 1;
+  min-width: 0;
   padding-top: 5px;
   font-family: var(--mono);
   font-size: 0.62rem;
   line-height: 1.8;
   color: #77746b;
+  overflow-wrap: anywhere;
 }
 
 .experience-marker {
+  position: absolute;
+  top: 38px;
+  left: 158px;
   width: 11px;
   height: 11px;
-  margin-top: 8px;
   border-radius: 50%;
   background: var(--orange);
   outline: 1px solid var(--orange);
   border: 3px solid var(--bg);
-  position: relative;
   z-index: 1;
 }
 
@@ -560,13 +608,18 @@ section {
   top: 7px;
   left: 1px;
   width: 1px;
-  height: calc(100% + 90px);
+  height: 140px;
   background: var(--line);
   z-index: -1;
 }
 
-.experience-details {
+.experience-details,
+.experience-content {
+  grid-column: 2;
   min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .experience-type {
@@ -576,23 +629,64 @@ section {
   letter-spacing: 0.07em;
 }
 
-.experience-details h3 {
+.experience-details h3,
+.experience-content h3 {
   font-size: 1.45rem;
   letter-spacing: -0.05em;
   line-height: 1.3;
   margin: 7px 0;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
-.experience-details h4 {
+.experience-details h4,
+.experience-content h4 {
   font-size: 0.87rem;
+  line-height: 1.5;
   margin-bottom: 12px;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
-.experience-details ul {
+.experience-details p,
+.experience-content p {
+  max-width: 850px;
+  color: #66645e;
+  font-size: 0.82rem;
+  line-height: 1.9;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.experience-details ul,
+.experience-content ul {
   padding-left: 18px;
   color: #66645e;
   font-size: 0.82rem;
   line-height: 1.95;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.experience-tags span {
+  border: 1px solid var(--line);
+  padding: 5px 8px;
+  font-size: 0.64rem;
+  color: var(--muted);
+}
+
+/* The volunteer entry intentionally has no timeline marker column. */
+.volunteer .experience-item {
+  grid-template-columns: minmax(125px, 175px) minmax(0, 1fr);
+}
+
+.volunteer .experience-marker {
+  display: none;
 }
 
 /* =========================================
@@ -676,8 +770,8 @@ section {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .skill-card {
@@ -692,22 +786,84 @@ section {
   transform: translateY(-4px);
 }
 
-.skill-card > span {
+.skill-card > span,
+.skill-card .skill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 5px 8px;
+  border: 1px solid #e3dfd6;
+  color: #7663b8;
   font-family: var(--mono);
-  color: #9b8ad9;
   font-size: 0.7rem;
 }
 
 .skill-card h3 {
   font-size: 1.1rem;
   letter-spacing: -0.035em;
-  margin: 18px 0 8px;
+  line-height: 1.4;
+  margin: 18px 0 12px;
 }
 
 .skill-card p {
   color: var(--muted);
   font-size: 0.8rem;
   line-height: 1.85;
+}
+
+.skill-list {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  position: relative;
+  padding: 10px 0 10px 18px;
+  border-top: 1px solid #e9e5dc;
+  color: #55534e;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.skill-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.18em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+/* =========================================
+   VOLUNTEER & ACHIEVEMENTS
+========================================= */
+
+.volunteer {
+  background: var(--bg);
+}
+
+.achievements {
+  background: #eeece4;
+}
+
+.achievement-card {
+  max-width: 850px;
+}
+
+.achievement-card .project-content {
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.achievement-card h3 {
+  margin-top: 12px;
 }
 
 /* =========================================
@@ -964,9 +1120,14 @@ section {
     gap: 40px;
   }
 
-  .section-padding {
+  .section-padding,
+  .section {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+
+  .container {
+    width: 100%;
   }
 }
 
@@ -1064,25 +1225,25 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .experience-item {
-    grid-template-columns: 1fr 16px;
-    gap: 12px 16px;
+  .experience-item,
+  .volunteer .experience-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 24px 0;
+  }
+
+  .experience-date,
+  .experience-details,
+  .experience-content {
+    grid-column: 1;
+    width: 100%;
   }
 
   .experience-date {
-    grid-column: 1 / -1;
+    padding-top: 0;
   }
 
-  .experience-marker {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .experience-details {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
+  .experience-marker,
   .experience-item:not(:last-child) .experience-marker::after {
     display: none;
   }
@@ -1117,8 +1278,13 @@ section {
 ========================================= */
 
 @media (max-width: 480px) {
-  .section-padding {
+  .section-padding,
+  .section {
     padding: 65px 18px;
+  }
+
+  .container {
+    width: 100%;
   }
 
   .hero {
@@ -1245,89 +1411,3 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
-
-/* Volunteer Experience layout fix */
-.volunteer .container {
-  width: min(100% - 48px, 1200px);
-  margin-inline: auto;
-}
-
-.volunteer .section-heading {
-  max-width: 760px;
-  margin-bottom: 40px;
-}
-
-.volunteer .experience-item {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 32px;
-  align-items: start;
-  width: 100%;
-}
-
-.volunteer .experience-date,
-.volunteer .experience-content {
-  min-width: 0;
-  width: auto;
-}
-
-.volunteer .experience-content h3,
-.volunteer .experience-content h4,
-.volunteer .experience-content p {
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
-.volunteer .experience-content p {
-  max-width: 800px;
-  line-height: 1.7;
-}
-
-@media (max-width: 640px) {
-  .volunteer .container {
-    width: min(100% - 32px, 1200px);
-  }
-
-  .volunteer .experience-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-
-/* Fix Surat Manav Seva Sangh experience entry */
-#experience .experience-item {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-#experience .experience-item .experience-content {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-#experience .experience-item .experience-content h3,
-#experience .experience-item .experience-content h4,
-#experience .experience-item .experience-content p,
-#experience .experience-item .experience-content .experience-tags {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
-#experience .experience-item .experience-date {
-  white-space: normal;
-  min-width: 0;
-}
-
-#experience .experience-item .experience-content h4 {
-  line-height: 1.5;
-}
-
-#experience .experience-item .experience-content p {
-  line-height: 1.7;
-}
-
-
