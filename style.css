@@ -1245,3 +1245,52 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Volunteer Experience layout fix */
+.volunteer .container {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+}
+
+.volunteer .section-heading {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.volunteer .experience-item {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  width: 100%;
+}
+
+.volunteer .experience-date,
+.volunteer .experience-content {
+  min-width: 0;
+  width: auto;
+}
+
+.volunteer .experience-content h3,
+.volunteer .experience-content h4,
+.volunteer .experience-content p {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.volunteer .experience-content p {
+  max-width: 800px;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .volunteer .container {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .volunteer .experience-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
